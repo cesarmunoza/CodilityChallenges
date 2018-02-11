@@ -8,21 +8,28 @@ public class Alpha2010 {
         int longitud = scaner.nextInt();        
         int[] arreglo = new int[longitud];
         Random valorAleatorio = new Random();
-        int mayor = 0;
-        int numeroPedido = 0;
+        
         for (int i = 0; i < longitud; i++) {
             int probable = valorAleatorio.nextInt(longitud);
             arreglo[i] = probable;
             System.out.printf("%d\n", arreglo[i]);
         }
-        for (int i = 0; i < longitud; i++) {
-            if (arreglo[i] > mayor){
-                mayor = arreglo[i];
+        solution(arreglo, longitud);
+    }
+    
+    public static int solution(int A[], int N){
+        int mayor = 0;
+        int numeroPedido = 0;
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > mayor){
+                mayor = A[i];
             }
         }
-        
-        numeroPedido = mayor+1;
+        numeroPedido = mayor + 1;
         System.out.println("El número buscado es: " + numeroPedido);
+        return numeroPedido;        
     }
+    
+    
     
 }
