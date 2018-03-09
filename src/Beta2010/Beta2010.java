@@ -1,12 +1,20 @@
 package Beta2010;
+
+import java.util.ArrayList;
+
 public class Beta2010{    
     public static int solution(int[] a){
         int contador = 0;
-        int pares = 0;
+        ArrayList<Integer> listaInterseccion = new ArrayList<>();
+        int distancia = 0;
         for (int j = 0; j < a.length; j++) {
-            int actual = a[j];
-            if(actual+a[j] > Math.abs(a[j]-actual)){
-                contador++;
+            for (int i = 0; i < a.length; i++) {
+                int actual = a[i];                                
+                if(i != j && !listaInterseccion.contains(distancia) && (actual+a[j] > Math.abs(i-j))){                    
+                    distancia += Math.abs(i-j);
+                    listaInterseccion.add(distancia);
+                    contador++;
+            }
             }
         }
         return contador;
