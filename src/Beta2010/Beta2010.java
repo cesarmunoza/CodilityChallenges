@@ -9,9 +9,9 @@ public class Beta2010{
         int distancia = 0;
         for (int j = 0; j < a.length; j++) {
             for (int i = 0; i < a.length; i++) {
-                int actual = a[i];                                
+                int actual = a[i];
+                distancia = Math.abs(i-j);
                 if(i != j && !listaInterseccion.contains(distancia) && (actual+a[j] > Math.abs(i-j))){                    
-                    distancia += Math.abs(i-j);
                     listaInterseccion.add(distancia);
                     contador++;
             }
